@@ -2,11 +2,11 @@ package org.example;
 
 public class Radio {
     public int correntRadiostation;
-    int maxRadioStation = 9;
-    int minRadioStation = 0;
+    private int maxRadioStation = 9;
+    private int minRadioStation = 0;
     public int currentVolume;
-    int maxVolume = 10;
-    int minVolume = 0;
+    private int maxVolume = 10;
+    private int minVolume = 0;
 
 
     public int getCorrentRadiostation() {
@@ -28,7 +28,7 @@ public class Radio {
         correntRadiostation = newCorrentRadiostation;
     }
 
-    public void NextStation() {
+    public void nextStation() {
         if (correntRadiostation >= maxRadioStation) {
             setCorrentRadiostation(minRadioStation);
         } else {
@@ -36,7 +36,7 @@ public class Radio {
         }
     }
 
-    public void PrevStation() {
+    public void prevStation() {
         if (correntRadiostation <= minRadioStation) {
             setCorrentRadiostation(maxRadioStation);
         } else {
@@ -62,13 +62,13 @@ public class Radio {
         currentVolume = newCorrentVolume;
     }
 
-    public void PlusVolume() {
+    public void plusVolume() {
 
         setCorrentVolume(currentVolume + 1);
 
     }
 
-    public void MinusVolume() {
+    public void minusVolume() {
         setCorrentVolume(currentVolume - 1);
     }
 }
