@@ -3,22 +3,21 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+    Radio rad = new Radio(9, 0, 3, 100, 0, 7);
 
     @Test
     public void shoutsetToMaxRadistation() {
-        Radio rad = new Radio();
         int maxRadioStation = 9;
         rad.setToMaxRadistation();
         int expected = 9;
-        int actual = rad.getCorrentRadiostation();
+        int actual = rad.getToMaxRadistation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldSetRadiostation() {
-        Radio rad = new Radio();
-        rad.setCorrentRadiostation(2);
-        int expected = 2;
+        rad.setCorrentRadiostation(3);
+        int expected = 3;
         int actual = rad.getCorrentRadiostation();
         Assertions.assertEquals(expected, actual);
 
@@ -26,8 +25,7 @@ public class RadioTest {
 
     @Test
     public void shouldNodSetRadiostationsAboveMax() {
-        Radio rad = new Radio();
-        rad.setCorrentRadiostation(10);
+        rad.setCorrentRadiostation(11);
         int expected = 0;
         int actual = rad.getCorrentRadiostation();
         Assertions.assertEquals(expected, actual);
@@ -35,7 +33,6 @@ public class RadioTest {
 
     @Test
     public void shouldNodSetRadiostationsAboveMin() {
-        Radio rad = new Radio();
         rad.setCorrentRadiostation(-1);
         int expected = 0;
         int actual = rad.getCorrentRadiostation();
@@ -44,7 +41,6 @@ public class RadioTest {
 
     @Test
     public void nextRadioStation() {
-        Radio rad = new Radio();
         rad.setCorrentRadiostation(5);
 
         rad.nextStation();
@@ -55,7 +51,6 @@ public class RadioTest {
 
     @Test
     public void overInitialRadioStation() {
-        Radio rad = new Radio();
         rad.setCorrentRadiostation(9);
 
         rad.nextStation();
@@ -66,7 +61,6 @@ public class RadioTest {
 
     @Test
     public void prevRadioStation() {
-        Radio rad = new Radio();
         rad.setCorrentRadiostation(4);
 
         rad.prevStation();
@@ -77,7 +71,6 @@ public class RadioTest {
 
     @Test
     public void underInitialRadioStation() {
-        Radio rad = new Radio();
         rad.setCorrentRadiostation(-1);
 
         rad.prevStation();
@@ -89,17 +82,15 @@ public class RadioTest {
 
     @Test
     public void shoutsetToMaxVolume() {
-        Radio rad = new Radio();
-        int maxVolume = 10;
+        int maxVolume = 100;
         rad.setToMaxVolume();
-        int expected = 10;
+        int expected = 100;
         int actual = rad.getCorrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldSetVolume() {
-        Radio rad = new Radio();
         rad.setCorrentVolume(2);
         int expected = 2;
         int actual = rad.getCorrentVolume();
@@ -109,8 +100,7 @@ public class RadioTest {
 
     @Test
     public void shouldNodSetVolumeAboveMax() {
-        Radio rad = new Radio();
-        rad.setCorrentVolume(11);
+        rad.setCorrentVolume(101);
         int expected = 0;
         int actual = rad.getCorrentVolume();
         Assertions.assertEquals(expected, actual);
@@ -118,7 +108,6 @@ public class RadioTest {
 
     @Test
     public void shouldNodSetVelumeAboveMin() {
-        Radio rad = new Radio();
         rad.setCorrentVolume(-1);
         int expected = 0;
         int actual = rad.getCorrentVolume();
@@ -127,7 +116,6 @@ public class RadioTest {
 
     @Test
     public void plusVolume() {
-        Radio rad = new Radio();
         rad.setCorrentVolume(5);
 
         rad.plusVolume();
@@ -138,7 +126,6 @@ public class RadioTest {
 
     @Test
     public void minusVolume() {
-        Radio rad = new Radio();
         rad.setCorrentVolume(9);
 
         rad.minusVolume();
