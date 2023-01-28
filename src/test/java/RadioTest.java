@@ -47,40 +47,40 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCorrentRadiostation(5);
 
-        rad.NextStation();
+        rad.nextStation();
         int expected = 6;
         int actual = rad.getCorrentRadiostation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void OverInitialRadioStation() {
+    public void overInitialRadioStation() {
         Radio rad = new Radio();
         rad.setCorrentRadiostation(9);
 
-        rad.NextStation();
+        rad.nextStation();
         int expected = 0;
         int actual = rad.getCorrentRadiostation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void PrevRadioStation() {
+    public void prevRadioStation() {
         Radio rad = new Radio();
         rad.setCorrentRadiostation(4);
 
-        rad.PrevStation();
+        rad.prevStation();
         int expected = 3;
         int actual = rad.getCorrentRadiostation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void UnderInitialRadioStation() {
+    public void underInitialRadioStation() {
         Radio rad = new Radio();
         rad.setCorrentRadiostation(-1);
 
-        rad.PrevStation();
+        rad.prevStation();
         int expected = 9;
         int actual = rad.getCorrentRadiostation();
         Assertions.assertEquals(expected, actual);
@@ -130,7 +130,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCorrentVolume(5);
 
-        rad.PlusVolume();
+        rad.plusVolume();
         int expected = 6;
         int actual = rad.getCorrentVolume();
         Assertions.assertEquals(expected, actual);
@@ -141,7 +141,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCorrentVolume(9);
 
-        rad.MinusVolume();
+        rad.minusVolume();
         int expected = 8;
         int actual = rad.getCorrentVolume();
         Assertions.assertEquals(expected, actual);
