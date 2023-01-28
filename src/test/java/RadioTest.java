@@ -15,6 +15,15 @@ public class RadioTest {
     }
 
     @Test
+    public void shoutsetToMinRadistation() {
+        int minRadioStation = 0;
+        rad.setToMinRadistation();
+        int expected = 0;
+        int actual = rad.getToMinRadistation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldSetRadiostation() {
         rad.setCorrentRadiostation(3);
         int expected = 3;

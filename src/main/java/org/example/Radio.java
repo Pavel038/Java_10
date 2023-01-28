@@ -28,12 +28,10 @@ public class Radio {
     public int getCorrentRadiostation() {
         return correntRadiostation;
     }
-
     public int getToMaxRadistation() {
         return maxRadioStation;
     }
-
-    public void setToMaxRadistation() {
+        public void setToMaxRadistation() {
         this.maxRadioStation = maxRadioStation;
     }
 
