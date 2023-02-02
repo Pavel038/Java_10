@@ -3,25 +3,18 @@ package org.example;
 public class Radio {
     private int maxRadioStation = 9;
     private int minRadioStation = 0;
-    public int correntRadiostation = minRadioStation;
-
+    private int correntRadiostation = minRadioStation;
+    private int numberOfRadioStations = 10;
     private int maxVolume = 10;
     private int minVolume = 0;
     public int currentVolume;
 
 
-    public Radio(int maxRadioStation,
-                 int minRadioStation,
-                 int correntRadiostation,
-                 int maxVolume,
-                 int minVolume,
-                 int currentVolume) {
-        this.maxRadioStation = maxRadioStation;
-        this.minRadioStation = minRadioStation;
-        this.correntRadiostation = minRadioStation;
-        this.maxVolume = maxVolume;
-        this.minVolume = minVolume;
-        this.currentVolume = minVolume;
+    public Radio() {
+    }
+
+    public Radio(int numberOfRadioStations) {
+        this.numberOfRadioStations = numberOfRadioStations;
     }
 
 
@@ -41,7 +34,18 @@ public class Radio {
 
     public void setToMinRadistation() {
         this.minRadioStation = minRadioStation;
+        
+    }
+    
+    public int getnumberOfRadioStations() {
+        return numberOfRadioStations;
 
+    }
+    
+     public void setnumberOfRadioStations() {
+        if (numberOfRadioStations > maxRadioStation) {
+            this.numberOfRadioStations = maxRadioStation;
+        }
     }
 
     public void setCorrentRadiostation(int newCorrentRadiostation) {
