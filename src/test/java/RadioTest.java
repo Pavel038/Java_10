@@ -3,8 +3,17 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
-    Radio rad = new Radio(9, 0, 3, 100, 0, 7);
+    Radio rad = new Radio();
 
+    @Test
+    public void shoutsetnumberOfRadioStations() {
+        Radio rad = new Radio(11);
+        rad.setnumberOfRadioStations();
+        int expected = 9;
+        int actual = rad.getnumberOfRadioStations();
+        Assertions.assertEquals(expected, actual);
+    }
+    
     @Test
     public void shoutsetToMaxRadistation() {
         int maxRadioStation = 9;
