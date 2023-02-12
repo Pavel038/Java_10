@@ -5,10 +5,11 @@ public class Radio {
     private int minRadioStation = 0;
     private int correntRadiostation = minRadioStation;
     private int numberOfRadioStations = 10;
-    private int maxVolume = 10;
+
+
+    private int maxVolume = 100;
     private int minVolume = 0;
     public int currentVolume;
-
 
     public Radio() {
     }
@@ -21,32 +22,36 @@ public class Radio {
     public int getCorrentRadiostation() {
         return correntRadiostation;
     }
-    public int getToMaxRadistation() {
-        return maxRadioStation;
-    }
-        public void setToMaxRadistation() {
-        this.maxRadioStation = maxRadioStation;
-    }
+
 
     public int getToMinRadistation() {
         return minRadioStation;
     }
 
-    public void setToMinRadistation() {
-        this.minRadioStation = minRadioStation;
-        
+    public int getToMaxRadistation() {
+        return maxRadioStation;
     }
-    
+
+    public void setToMaxRadistation() {
+        maxRadioStation = maxRadioStation;
+    }
+
     public int getnumberOfRadioStations() {
         return numberOfRadioStations;
 
     }
-    
-     public void setnumberOfRadioStations() {
+
+    public void setToMinRadistation() {
+        minRadioStation = minRadioStation;
+
+    }
+
+    public void setnumberOfRadioStations() {
         if (numberOfRadioStations > maxRadioStation) {
             this.numberOfRadioStations = maxRadioStation;
         }
     }
+
 
     public void setCorrentRadiostation(int newCorrentRadiostation) {
         if (newCorrentRadiostation < minRadioStation) {
@@ -55,14 +60,14 @@ public class Radio {
         if (newCorrentRadiostation > maxRadioStation) {
             return;
         }
-        this.correntRadiostation = newCorrentRadiostation;
+        correntRadiostation = newCorrentRadiostation;
     }
 
     public void nextStation() {
         if (correntRadiostation >= maxRadioStation) {
             setCorrentRadiostation(minRadioStation);
         } else {
-            this.correntRadiostation = correntRadiostation + 1;
+            correntRadiostation = correntRadiostation + 1;
         }
     }
 
@@ -70,7 +75,7 @@ public class Radio {
         if (correntRadiostation <= minRadioStation) {
             setCorrentRadiostation(maxRadioStation);
         } else {
-            this.correntRadiostation = correntRadiostation - 1;
+            correntRadiostation = correntRadiostation - 1;
         }
     }
 
@@ -90,7 +95,7 @@ public class Radio {
         if (newCorrentVolume > maxVolume) {
             return;
         }
-        this.currentVolume = newCorrentVolume;
+        currentVolume = newCorrentVolume;
     }
 
     public void plusVolume() {
@@ -103,6 +108,7 @@ public class Radio {
         setCorrentVolume(currentVolume - 1);
     }
 }
+
 
 
 
